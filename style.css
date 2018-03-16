@@ -11,10 +11,9 @@ body {
 }
 
 #hamburger {
-  /*visibility: hidden;*/
-
-  display: block;
+  display: none;
   position: absolute;
+  z-index: 2;
   left: 28%;
   top: 24px;
 }
@@ -82,7 +81,7 @@ nav td {
   padding-right: 30px;
 }
 
-span {
+.sum {
   font-size: 14px;
   background: #6b7292;
   padding: 1px 5px;
@@ -90,7 +89,7 @@ span {
   vertical-align: middle;
 }
 
-span.active {
+.sum.active {
   background: #148fd5;
   color: #ffffff;
 }
@@ -107,6 +106,8 @@ span.active {
   text-decoration: line-through;
 }
 
+/* Main */
+
 
 main {
   width: 72%;
@@ -119,11 +120,10 @@ main h1 {
   margin-bottom: 20px;
 }
 
-main h1 span {
+main h1 .sum.active {
   vertical-align: 2px;
   margin-left: 20px;
 }
-
 
 table {
   box-sizing: border-box;
@@ -134,70 +134,129 @@ table {
 main th {
   text-align: left;
   padding: 15px 0 15px 12px;
+  font-weight: normal;
 }
 
 main th a {
-  font-weight: normal;
-  color: #148fd5;
   text-decoration: none;
+  color: #148fd5;
+
 }
 
-main th a:before {
-  content: "+";
+#add {
   font-size: 24px;
-  display: inline-block;
-  box-sizing: border-box;
-  margin-right: 14px;
-  vertical-align: 0;
+  font-family: "Times New Roman";
+  font-weight: 300;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 main td {
   border-top: 1px solid #e7e7e7;
   padding: 15px 0 15px 12px;
+  text-align: left;
 }
 
-input[type="checkbox"] {
-  display: none;
+input[type="checkbox"].check {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  width  : 14px;
+  height : 14px;
+  border: 1px solid #9c9c9c;
+  vertical-align: top;
 }
+
+input[type="checkbox"].check + label {
+  margin-left: 10px;
+}
+
+input[type="checkbox"].check:checked {
+  border: none;
+  background: transparent url("images/done_v2.png") 0 0 no-repeat;
+  background-size: 14px;
+}
+
+input[type="checkbox"].check:checked + label {
+  color: #b3b3b3;
+  text-decoration: line-through;
+}
+
 
 label:hover {
   cursor: pointer;
   color: #148fd5;
 }
 
-label:before {
-  content: "";
-  display: inline-block;
-  box-sizing: border-box;
-  width  : 16px;
-  height : 16px;
-  border: 1px solid #9c9c9c;
-  margin-right: 14px;
-  vertical-align: -3px;
-}
-
-input[type="checkbox"]:checked + label:before {
-  border: none;
-  background: transparent url("images/done_v2.png") 0 0 no-repeat;
-  background-size: 16px;
-}
-
-input[type="checkbox"]:checked + label {
-  color: #b3b3b3;
-  text-decoration: line-through;
-}
-
 .delete {
   text-align: right;
 }
 
+/* Modal */
+
+main {
+  position: relative;
+}
+
+div.form {
+  display: none;
+}
+
+#modal {
+  display: none;
+}
+
+#modal:checked + div.form {
+  display: block;
+}
+
+#modal:checked + div.form form {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  width: 570px;
+  margin-left: -285px;
+  text-align: left;
+  height: 400px;
+  z-index: 4;
+  background: #ffffff;
+}
+
+#modal:checked + div.form:before {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  content: "";
+  background: rgba(0, 0, 0, .2);
+}
+
+dt {
+  display: inline-block;
+  text-align: left;
+  width: 100px;
+}
+
+dd {
+  display: inline-block;
+    text-align: left;
+
+}
+
+/* Smaller devices */
 
 @media (max-width: 768px) {
   #hamburger {
-    visibility: visible;
+    display: block;
     cursor: pointer;
-    left: 0
+    left: 0;
+    margin-left: 30px;
   }
+
   nav {
     display: none;
   }
@@ -206,12 +265,16 @@ input[type="checkbox"]:checked + label {
     width: 100%;
   }
 
-  #menu_toggle:checked + nav {
+  #menu_toggle:checked ~ nav {
     display: inline-block;
     width: 40%;
   }
 
-  #menu_toggle:checked + nav + main {
+  #menu_toggle:checked ~ main {
     width: 60%;
+  }
+
+  #menu_toggle:checked + #hamburger {
+    left: 40%;
   }
 }

@@ -7,42 +7,42 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <label for="menu_toggle" id="hamburger"><img src="images/hamburger.png" alt="menu" /></label>
     <input id="menu_toggle" type="checkbox" />
+    <label for="menu_toggle" id="hamburger"><img src="images/hamburger.png" alt="menu" /></label>
     <nav>
       <table>
         <thead>
           <tr>
             <th class="first_column"></th>
             <th>All Todos</th>
-            <td><span>18</span></td>
+            <td><span class="sum">18</span></td>
           </tr>
         </thead>
         <tbody>
           <tr class="highlight">
             <th class="first_column"></th>
             <th>02/16</th>
-            <td><span class="active">8</span></td>
+            <td><span class="sum active">8</span></td>
           </tr>
           <tr>
             <th class="first_column"></th>
             <th>03/16</th>
-            <td><span>2</span></td>
+            <td><span class="sum">2</span></td>
           </tr>
           <tr>
             <th class="first_column"></th>
             <th>04/16</th>
-            <td><span>1</span></td>
+            <td><span class="sum">1</span></td>
           </tr>
           <tr>
             <th class="first_column"></th>
             <th>05/16</th>
-            <td><span>1</span></td>
+            <td><span class="sum">1</span></td>
           </tr>
           <tr>
             <th class="first_column"></th>
             <th>06/16</th>
-            <td><span>6</span></td>
+            <td><span class="sum">6</span></td>
           </tr>
         </tbody>
       </table>
@@ -87,14 +87,16 @@
     --><main>
       <h1>
         02/16
-        <span class="active">8</span>
+        <span class="sum active">8</span>
       </h1>
 
       <table>
         <thead>
           <tr>
             <th>
-              <a href="#">Add new to do</a>
+              <a href="#">
+                <span id="add">&#43;</span> Add new to do
+              </a>
             </th>
             <th></th>
           </tr>
@@ -102,8 +104,91 @@
         <tbody>
           <tr>
             <td>
-              <input id="item_1" type="checkbox" />
-              <label for="item_1">Item 1</label>
+              <input class="check" id="item_1" type="checkbox" />
+              <label for="modal">Item 1</label>
+              <input id="modal" type="checkbox" />
+              <div class="form">
+                <form method="post" action="#">
+                  <fieldset>
+                    <dl>
+                      <dt><label for="title">Title</label></dt>
+                      <dd><input type="text" id="title" name="title" value="Item 1" /></dd>
+                    </dl>
+                    <dl>
+                      <dt><label for="day">Due Date</label></dt>
+                      <dd>
+                        <select id="day" name="day">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
+                          <option>13</option>
+                          <option>14</option>
+                          <option>15</option>
+                          <option selected>16</option>
+                          <option>17</option>
+                          <option>18</option>
+                          <option>19</option>
+                          <option>20</option>
+                          <option>21</option>
+                          <option>22</option>
+                          <option>23</option>
+                          <option>24</option>
+                          <option>25</option>
+                          <option>26</option>
+                          <option>27</option>
+                          <option>28</option>
+                          <option>29</option>
+                          <option>30</option>
+                          <option>31</option>
+                        </select>
+                        /
+                        <select id="month" name="month">
+                          <option selected disabled>Month</option>
+                          <option>January</option>
+                          <option>February</option>
+                          <option>March</option>
+                          <option>April</option>
+                          <option>May</option>
+                          <option>June</option>
+                          <option>July</option>
+                          <option>August</option>
+                          <option>September</option>
+                          <option>October</option>
+                          <option>November</option>
+                          <option>December</option>
+                        </select>
+                        /
+                        <select id="year" name="year">
+                          <option selected disabled>Year</option>
+                          <option>2018</option>
+                          <option>2019</option>
+                          <option>2020</option>
+                          <option>2021</option>
+                        </select>
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>
+                        <label for="description">Description</label>
+                      </dt>
+                      <dd>
+                        <textarea id="description" name="description" placeholder="Description"></textarea>
+                      </dd>
+                    </dl>
+                    <input type="submit" class="button" value="Save" />
+                    <input type="submit" class="button" value="Mark as Complete" />
+                  </fieldset>
+                </form>
+              </div>
             </td>
             <td class="delete">
               <a href="#" ><img src="images/trash.png" alt="trash bin" /></a>
@@ -111,7 +196,7 @@
           </tr>
           <tr>
             <td>
-              <input id="item_2" type="checkbox" />
+              <input class="check" id="item_2" type="checkbox" />
               <label for="item_2">Item 2</label>
             </td>
             <td class="delete">
@@ -120,7 +205,7 @@
           </tr>
           <tr>
             <td>
-              <input id="item_3" checked type="checkbox" />
+              <input class="check" id="item_3" checked type="checkbox" />
               <label for="item_3">Item 3</label>
             </td>
             <td class="delete">
@@ -129,7 +214,7 @@
           </tr>
           <tr>
             <td>
-              <input id="item_4" checked type="checkbox" />
+              <input class="check" id="item_4" checked type="checkbox" />
               <label for="item_4">Item 4</label>
             </td>
             <td class="delete">
@@ -138,7 +223,7 @@
           </tr>
           <tr>
             <td>
-              <input id="item_5" checked type="checkbox" />
+              <input class="check" id="item_5" checked type="checkbox" />
               <label for="item_5">Item 5</label>
             </td>
             <td class="delete">
@@ -147,7 +232,7 @@
           </tr>
           <tr>
             <td>
-              <input id="item_6" type="checkbox" />
+              <input class="check" id="item_6" type="checkbox" />
               <label for="item_6">Item 6</label>
             </td>
             <td class="delete">
@@ -156,7 +241,7 @@
           </tr>
           <tr>
             <td>
-              <input id="item_7" type="checkbox" />
+              <input class="check" id="item_7" type="checkbox" />
               <label for="item_7">Item 7</label>
             </td>
             <td class="delete">
@@ -165,7 +250,7 @@
           </tr>
           <tr>
             <td>
-              <input id="item_8" type="checkbox" />
+              <input class="check" id="item_8" type="checkbox" />
               <label for="item_8">Item 8</label>
             </td>
             <td class="delete">
@@ -174,7 +259,7 @@
           </tr>
           <tr>
             <td>
-              <input id="item_9" type="checkbox" />
+              <input class="check" id="item_9" type="checkbox" />
               <label for="item_9">Item 9</label>
             </td>
             <td class="delete">
