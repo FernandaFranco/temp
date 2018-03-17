@@ -36,7 +36,7 @@ main, nav {
 nav {
   width: 28%;
   height: 100vmax;
-  padding: 74px 0 0 0;
+  padding: 64px 0 0 0;
   background: #464f77;
   color: #b2b5c3;
 }
@@ -49,17 +49,10 @@ nav thead th {
   font-size: 18px;
   font-weight: normal;
   color: #ffffff;
-  padding-top: 0;
 }
-
-nav thead td {
-  padding-top: 0;
-  vertical-align: top;
-}
-
 
 nav thead th.first_column {
-  background: transparent url("images/all-todos.png") 100% 0 no-repeat;
+  background: transparent url("images/all-todos.png") 100% 50% no-repeat;
   vertical-align: middle;
 }
 
@@ -100,7 +93,7 @@ nav td {
 }
 
 #completed thead th.first_column {
-  background: transparent url("images/done.png") 100% 0 no-repeat;
+  background: transparent url("images/done.png") 100% 50% no-repeat;
 }
 
 #completed tbody th {
