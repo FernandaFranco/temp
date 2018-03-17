@@ -187,10 +187,6 @@ input[type="checkbox"].check:checked + .item {
   text-decoration: line-through;
 }
 
-input[type="checkbox"].check:checked + .item:hover {
-  color: #148fd5;
-}
-
 .delete {
   text-align: right;
 }
