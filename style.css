@@ -35,7 +35,8 @@ main, nav {
 
 nav {
   width: 28%;
-  padding: 74px 0 200px 0;
+  height: 100vmax;
+  padding: 74px 0 0 0;
   background: #464f77;
   color: #b2b5c3;
 }
@@ -84,7 +85,7 @@ nav td {
 .sum {
   font-size: 14px;
   background: #6b7292;
-  padding: 2px 5px;
+  padding: 1px 4px;
   border-radius: 100%;
   vertical-align: middle;
 }
@@ -107,7 +108,6 @@ nav td {
 }
 
 /* Main */
-
 
 main {
   width: 72%;
@@ -133,7 +133,9 @@ table {
 
 main th {
   text-align: left;
-  padding: 15px 0 10px 10px;
+  padding-left: 10px;
+  height: 50px;
+  box-sizing: border-box;
   font-weight: normal;
 }
 
@@ -153,7 +155,9 @@ main th a {
 
 main td {
   border-top: 1px solid #e7e7e7;
-  padding: 15px 0 15px 10px;
+  padding-left: 10px;
+  height: 50px;
+  box-sizing: border-box;
   text-align: left;
 }
 
@@ -214,11 +218,11 @@ div.form {
 
 #modal:checked + div.form form {
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 50%;
   box-sizing: border-box;
   width: 576px;
-  padding: 38px 30px;
+  padding: 38px 40px 40px 30px;
   margin-left: -288px;
   text-align: left;
   height: 400px;
@@ -248,29 +252,31 @@ div.form {
 }
 
 .form dt {
-  width: 25%;
+  width: 20%;
   text-align: left;
   padding-top: 10px;
 }
 
 .form dd {
-  width: 75%;
+  width: 80%;
   text-align: center;
 }
 
 #buttons {
-  width: 75%;
-  margin-left: 25%;
+  width: 80%;
+  margin-left: 20%;
 }
 
 input[type="text"],
 textarea {
   width: 100%;
-  padding: 10px;
+  height: 36px;
+  padding-left: 10px;
   box-sizing: border-box;
   border: 1px solid #b3b3b3;
   font: normal 16px Helvetica, Arial, sans-serif;
   letter-spacing: 1px;
+  color: #060606;
 }
 
 select {
@@ -279,7 +285,8 @@ select {
   appearance: none;
   background: #ffffff url("images/arrows.png") right 10px top 50% no-repeat;
   display: inline-block;
-  padding: 10px;
+  height: 36px;
+  padding-left: 10px;
   box-sizing: border-box;
   width: 30%;
   border: 1px solid #b3b3b3;
@@ -294,6 +301,7 @@ select {
 
 textarea {
   height: 144px;
+  padding: 10px;
   resize: none;
 }
 
@@ -312,7 +320,7 @@ input[type="submit"] {
   background: #148fd5;
   color: #ffffff;
   width: 100%;
-  padding: 10px;
+  padding: 10px 0;
   box-sizing: border-box;
   border: none;
   border-radius: 5px;
@@ -361,4 +369,50 @@ input[type="submit"] {
 }
 
 @media (max-width: 620px) {
+  #menu_toggle:checked ~ nav {
+    display: inline-block;
+    width: 50%;
+  }
+
+  #menu_toggle:checked ~ main {
+    width: 50%;
+  }
+
+  #menu_toggle:checked + #hamburger {
+    left: 50%;
+  }
+
+  #modal:checked + div.form form {
+    width: 100%;
+    height: auto;
+    left: 0;
+    margin: 0;
+  }
+
+  .form dt, .form dd {
+    display: block;
+    width: 100%;
+  }
+
+  .form dt {
+    padding: 0 0 10px 10px;
+  }
+
+  select {
+    font-size: 14px;
+    width: 28%;
+  }
+
+  .button {
+    padding: 5px;
+  }
+
+  input[type="submit"] {
+    font-size: 14px;
+  }
+
+  #buttons {
+    width: 100%;
+    margin: 0;
+  }
 }
