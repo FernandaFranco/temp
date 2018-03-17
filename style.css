@@ -362,6 +362,8 @@ input[type="submit"] {
 }
 
 @media (max-width: 620px) {
+
+
   #menu_toggle:checked ~ nav {
     display: inline-block;
     width: 50%;
@@ -369,6 +371,7 @@ input[type="submit"] {
 
   #menu_toggle:checked ~ main {
     width: 50%;
+    padding-left: 10px;
   }
 
   #menu_toggle:checked + #hamburger {
