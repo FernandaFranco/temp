@@ -35,7 +35,7 @@ main, nav {
 
 nav {
   width: 28%;
-  padding: 70px 0 200px 0;
+  padding: 74px 0 200px 0;
   background: #464f77;
   color: #b2b5c3;
 }
@@ -73,7 +73,7 @@ nav th {
 }
 
 nav th.first_column {
-  width: 40%;
+  width: 38%;
 }
 
 nav td {
@@ -84,7 +84,7 @@ nav td {
 .sum {
   font-size: 14px;
   background: #6b7292;
-  padding: 1px 5px;
+  padding: 2px 5px;
   border-radius: 100%;
   vertical-align: middle;
 }
@@ -111,7 +111,7 @@ nav td {
 
 main {
   width: 72%;
-  padding: 70px 8.5% 0 20px;
+  padding: 74px 8.5% 0 20px;
 }
 
 main h1 {
@@ -122,7 +122,7 @@ main h1 {
 
 main h1 .sum.active {
   vertical-align: 2px;
-  margin-left: 20px;
+  margin-left: 13px;
 }
 
 table {
@@ -133,7 +133,7 @@ table {
 
 main th {
   text-align: left;
-  padding: 15px 0 15px 12px;
+  padding: 15px 0 10px 10px;
   font-weight: normal;
 }
 
@@ -153,7 +153,7 @@ main th a {
 
 main td {
   border-top: 1px solid #e7e7e7;
-  padding: 15px 0 15px 12px;
+  padding: 15px 0 15px 10px;
   text-align: left;
 }
 
@@ -166,7 +166,7 @@ input[type="checkbox"].check {
   width  : 14px;
   height : 14px;
   border: 1px solid #9c9c9c;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 input[type="checkbox"].check + .item {
@@ -237,22 +237,23 @@ div.form {
   background: rgba(0, 0, 0, .2);
 }
 
-dl {
+.form dl {
   padding-bottom: 24px;
 }
 
-dt, dd {
+.form dt, .form dd {
   display: inline-block;
   box-sizing: border-box;
   vertical-align: top;
 }
-dt {
+
+.form dt {
   width: 25%;
   text-align: left;
   padding-top: 10px;
 }
 
-dd {
+.form dd {
   width: 75%;
   text-align: center;
 }
@@ -268,7 +269,8 @@ textarea {
   padding: 10px;
   box-sizing: border-box;
   border: 1px solid #b3b3b3;
-  font-size: 16px;
+  font: normal 16px Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
 }
 
 select {
@@ -282,7 +284,8 @@ select {
   width: 30%;
   border: 1px solid #b3b3b3;
   border-radius: 0;
-  font-size: 16px;
+  font: normal 16px Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
 }
 
 #month, #year {
@@ -319,6 +322,15 @@ input[type="submit"] {
 /* Smaller devices */
 
 @media (max-width: 768px) {
+
+  table {
+    position: static;
+  }
+
+  #modal:checked + div.form form {
+    top: 100px;
+}
+
   #hamburger {
     display: block;
     cursor: pointer;
@@ -346,4 +358,7 @@ input[type="submit"] {
   #menu_toggle:checked + #hamburger {
     left: 40%;
   }
+}
+
+@media (max-width: 620px) {
 }
